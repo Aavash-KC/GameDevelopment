@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Wall Light
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 2603823247246314863, guid: 01a4f9c50fb714b43a7f78c0458d8396,
-    type: 3}
+  m_Sprite: {fileID: 21300002, guid: ba4c25864e935b546b12854e658949dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
+  - Damageable
+  - Dead
+  - Player
   - 
   - 
   - 
@@ -42,17 +43,20 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 1394130093
+    uniqueID: 2840594545
     locked: 0
   - name: Decoration
-    uniqueID: 2156820795
+    uniqueID: 2090695731
     locked: 0
   - name: Platforms
-    uniqueID: 4217436611
+    uniqueID: 1667960627
+    locked: 0
+  - name: Enemy
+    uniqueID: 3615571261
     locked: 0
   - name: Player
-    uniqueID: 2841847885
+    uniqueID: 756119877
     locked: 0
   - name: Foreground Decoration
-    uniqueID: 3527573181
+    uniqueID: 1796422411
     locked: 0

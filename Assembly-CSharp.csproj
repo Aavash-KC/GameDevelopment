@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{12D39182-CD11-4153-909C-913D19F318EB}</ProjectGuid>
+    <ProjectGuid>{6491F6C3-C057-CAFF-17DD-40FCD391A6E5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,7 +55,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\BasicEnemyController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\CombatDummyController.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\LoadLevel.cs" />
+     <Compile Include="Assets\Scripts\LoadingManager.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Particles\ParticleController.cs" />
+     <Compile Include="Assets\Scripts\Player\Healthbar.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAfterImagePool.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAfterImageSprite.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerCombatController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -238,6 +251,15 @@
  </Reference>
  <Reference Include="UnityEditor">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.Editor">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.Tracker">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.StandardEvents">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -585,97 +607,103 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Cinemachine">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Animation.Runtime">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+ <Reference Include="UnityEngine.Monetization">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+ <Reference Include="com.unity.multiplayer-hlapi.Editor">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ <Reference Include="UnityEngine.Purchasing.Stores">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Purchasing.Stores.dll</HintPath>
+ </Reference>
+ <Reference Include="Purchasing.Common">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Purchasing.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Path.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Animation.Triangle.Runtime">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+ <Reference Include="UnityEngine.Purchasing.Codeless">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Purchasing.Codeless.dll</HintPath>
  </Reference>
- <Reference Include="PsdPlugin">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+ <Reference Include="UnityEngine.Purchasing.SecurityCore">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityCore.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.multiplayer-weaver.Editor">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Psdimporter.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+ <Reference Include="UnityEditor.SpatialTracking">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.cinemachine.editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTracking">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ <Reference Include="UnityEngine.Advertisements.Editor">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Common.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ <Reference Include="Unity.Analytics.DataPrivacy">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
- <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+ <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing.SecurityStub">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityStub.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/L6/Platformer  Game/2D platformer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+ <HintPath>C:/Users/Admin/Downloads/Tut Ver - 2D Platformer Controller Tutorial/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
